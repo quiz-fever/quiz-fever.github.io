@@ -44,38 +44,48 @@
         <div id="views">
 
             <section id="register">
-                <div>
-                    <header>
-                        <a href="#">Login</a>
-                        <h1>Register</h1>
-                    </header>
-                    <form>
-                        <label>Username: <input type="text" name="username" /></label>
-                        <label>Email: <input type="text" name="email" /></label>
-                        <label>Password: <input type="password" name="password" /></label>
-                        <label>Repeat: <input type="password" name="repass" /></label>
-                        <input type="submit" value="Create Account" />
-                    </form>
-                    <footer>
-                        Already have an account? <a href="#">Sign in here</a>.
-                    </footer>
+                <div class="pad-large">
+                    <div class="glass narrow">
+                        <header class="tab layout">
+                            <a class="tab-item" href="/login">Login</a>
+                            <h1 class="tab-item active">Register</h1>
+                        </header>
+                        <form class="pad-med centered">
+                            <label class="block centered">Username: <input class="auth-input input" type="text"
+                                    name="username" /></label>
+                            <label class="block centered">Email: <input class="auth-input input" type="text"
+                                    name="email" /></label>
+                            <label class="block centered">Password: <input class="auth-input input" type="password"
+                                    name="password" /></label>
+                            <label class="block centered">Repeat: <input class="auth-input input" type="password"
+                                    name="repass" /></label>
+                            <input class="block action cta" type="submit" value="Create Account" />
+                        </form>
+                        <footer class="tab-footer">
+                            Already have an account? <a class="invert" href="#">Sign in here</a>.
+                        </footer>
+                    </div>
                 </div>
             </section>
 
             <section id="login">
-                <div>
-                    <header>
-                        <h1>Login</h1>
-                        <a href="#">Register</a>
-                    </header>
-                    <form>
-                        <label>Email: <input type="text" name="email" /></label>
-                        <label>Password: <input type="password" name="password" /></label>
-                        <input type="submit" value="Sign In" />
-                    </form>
-                    <footer>
-                        Don't have an account? <a href="#">Create one here</a>.
-                    </footer>
+                <div class="pad-large">
+                    <div class="glass narrow">
+                        <header class="tab layout">
+                            <h1 class="tab-item active">Login</h1>
+                            <a class="tab-item" href="/register">Register</a>
+                        </header>
+                        <form class="pad-med centered">
+                            <label class="block centered">Email: <input class="auth-input input" type="text"
+                                    name="email" /></label>
+                            <label class="block centered">Password: <input class="auth-input input" type="password"
+                                    name="password" /></label>
+                            <input class="block action cta" type="submit" value="Sign In" />
+                        </form>
+                        <footer class="tab-footer">
+                            Don't have an account? <a class="invert" href="#">Create one here</a>.
+                        </footer>
+                    </div>
                 </div>
             </section>
 

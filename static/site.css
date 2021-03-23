@@ -3,6 +3,7 @@
 @import "./quiz.css";
 @import "./editor.css";
 @import "./animate.css";
+@import "./auth.css";
 
 #views {
     display: none;

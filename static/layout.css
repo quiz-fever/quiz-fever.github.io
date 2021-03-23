@@ -131,8 +131,12 @@ footer {
 }
 
 .narrow {
-    margin-left: 280px;
-    margin-right: 280px;
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
+.centered {
+    text-align: center;
 }
 
 .glass {
