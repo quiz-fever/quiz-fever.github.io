@@ -4,6 +4,7 @@
 @import "./editor.css";
 @import "./animate.css";
 @import "./auth.css";
+@import "./profile.css";
 
 #views {
     display: none;
