@@ -9,3 +9,8 @@
 #views {
     display: none;
 }
+
+
+#guest-nav, #user-nav {
+    display: none;
+}
