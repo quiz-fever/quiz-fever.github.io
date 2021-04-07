@@ -9,6 +9,7 @@ import { quizTemplate } from './common/quiz-preview.js';
 const template = () => html`
 <section id="browse">
     <header class="pad-large">
+        ${'' /*
         <form class="browse-filter">
             <input class="input" type="text" name="query">
             <select class="input" name="topic">
@@ -17,6 +18,7 @@ const template = () => html`
             </select>
             <input class="input submit action" type="submit" value="Filter Quizes">
         </form>
+        */}
         <h1>All quizes</h1>
     </header>
 

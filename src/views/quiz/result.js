@@ -22,6 +22,7 @@ const resultTemplate = (quiz, result) => html`
         </article>
     </div>
 
+    ${'' /*
     <div class="pad-large alt-page">
         <article class="preview">
             <span class="s-correct">
@@ -88,6 +89,7 @@ const resultTemplate = (quiz, result) => html`
                 </div>
         </article>
     </div>
+    */}
 
 </section>`;
 
