@@ -1,6 +1,6 @@
-import { topics, html, until } from '../../lib.js';
+import { html, until } from '../../lib.js';
 
-
+import { topics } from '../../util.js';
 import { getSolutionCount } from '../../api/data.js';
 import { line } from '../common/loader.js';
 

@@ -1,5 +1,6 @@
-import { topics, html, until } from '../lib.js';
+import { html, until } from '../lib.js';
 
+import { topics } from '../util.js';
 import { getMostRecent, getStats } from '../api/data.js';
 import { cube, line } from './common/loader.js';
 import { quizTemplate } from './common/quiz-preview.js';
@@ -38,7 +39,7 @@ async function loadRecent() {
         <div>
             <a class="action cta" href="/browse">Browse all quizes</a>
         </div>
-    </div>`; 
+    </div>`;
 }
 
 export async function homePage(ctx) {

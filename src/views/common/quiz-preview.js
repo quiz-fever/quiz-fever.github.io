@@ -1,6 +1,6 @@
-import { html, topics } from '../../lib.js';
+import { html } from '../../lib.js';
 
-
+import { topics } from '../../util.js';
 
 export const quizTemplate = (quiz) => html`
 <article class="preview layout">

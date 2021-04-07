@@ -1,4 +1,6 @@
-import { topics, html, render } from '../../lib.js';
+import { html, render } from '../../lib.js';
+
+import { topics } from '../../util.js';
 import { createList } from './list.js';
 import { createQuiz, updateQuiz, getQuizById, getQuestionsByQuizId } from '../../api/data.js';
 
