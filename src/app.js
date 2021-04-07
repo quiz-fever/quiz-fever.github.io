@@ -8,6 +8,7 @@ import { quizPage } from './views/quiz/quiz.js';
 import { cube } from './views/common/loader.js';
 import { resultPage } from './views/quiz/result.js';
 import { homePage } from './views/home.js';
+import { detailsPage } from './views/quiz/details.js';
 
 const state = {};
 const main = document.getElementById('content');
@@ -16,9 +17,10 @@ document.getElementById('logoutBtn').addEventListener('click', logout);
 
 page('*', decorateContext);
 page('/', homePage);
-page('/browse', browsePage);
 page('/login', loginPage);
 page('/register', registerPage);
+page('/browse', browsePage);
+page('/details/:id', getQuiz, detailsPage);
 page('/quiz/:id', getQuiz, quizPage);
 page('/summary/:id', getQuiz, resultPage);
 page('/create', editorPage);
