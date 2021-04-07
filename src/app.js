@@ -1,5 +1,6 @@
 import { page, render } from './lib.js';
 
+import { getUserData } from './util.js';
 import { getQuestionsByQuizId, getQuizById, logout as apiLogout } from './api/data.js';
 import { browsePage } from './views/browse.js';
 import { editorPage } from './views/editor/editor.js';
@@ -51,16 +52,18 @@ function clearCache(quizId) {
 }
 
 function decorateContext(ctx, next) {
+    ctx.user = getUserData();
     ctx.render = (content) => render(content, main);
     ctx.setUserNav = setUserNav;
     next();
 }
 
 function setUserNav() {
-    const userId = sessionStorage.getItem('userId');
-    if (userId != null) {
+    const user = getUserData();
+    if (user) {
         document.getElementById('user-nav').style.display = 'block';
         document.getElementById('guest-nav').style.display = 'none';
+        document.querySelector('.profile-link').href = `/users/${user.objectId}`;
     } else {
         document.getElementById('user-nav').style.display = 'none';
         document.getElementById('guest-nav').style.display = 'block';

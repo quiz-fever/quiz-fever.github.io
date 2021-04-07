@@ -16,7 +16,7 @@ function getUserData() {
 }
 
 function setUserData(user) {
-    sessionStorage.setItem(user, JSON.stringify(user));
+    sessionStorage.setItem('user', JSON.stringify(user));
 }
 
 function clearUserData() {
