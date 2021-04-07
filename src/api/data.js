@@ -3,6 +3,8 @@ import * as api from './api.js';
 
 const host = 'https://parseapi.back4app.com';
 api.settings.host = host;
+api.settings.appId = 'C5El0gpny7zVGYZyuy4ElduX5yVNiUYgndL6mbOA';
+api.settings.apiKey = 'xlUA5jfBbIvbaNMRU7TXOAwN2jBEB31t9wa2yjYu';
 
 export const login = api.login;
 export const register = api.register;

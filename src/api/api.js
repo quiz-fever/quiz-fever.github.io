@@ -1,5 +1,10 @@
+import { setUserData, clearUserData } from '../util.js';
+
+
 export const settings = {
-    host: ''
+    host: '',
+    appId: '',
+    apiKey: '',
 };
 
 async function request(url, options) {
@@ -27,8 +32,8 @@ function getOptions(method = 'get', body) {
     const options = {
         method,
         headers: {
-             'X-Parse-Application-Id': 'C5El0gpny7zVGYZyuy4ElduX5yVNiUYgndL6mbOA',
-             'X-Parse-REST-API-Key': 'xlUA5jfBbIvbaNMRU7TXOAwN2jBEB31t9wa2yjYu'
+            'X-Parse-Application-Id': settings.appId,
+            'X-Parse-REST-API-Key': settings.apiKey
         }
     };
 
@@ -64,9 +69,7 @@ export async function del(url) {
 export async function login(username, password) {
     const result = await post(settings.host + '/login', { username, password });
 
-    sessionStorage.setItem('username', username);
-    sessionStorage.setItem('authToken', result.sessionToken);
-    sessionStorage.setItem('userId', result.objectId);
+    setUserData(Object.assign({}, result, { username }));
 
     return result;
 }
@@ -74,19 +77,15 @@ export async function login(username, password) {
 export async function register(email, username, password) {
     const result = await post(settings.host + '/users', { email, username, password });
 
-    sessionStorage.setItem('username', username);
-    sessionStorage.setItem('authToken', result.sessionToken);
-    sessionStorage.setItem('userId', result.objectId);
+    setUserData(Object.assign({}, result, { username }));
 
     return result;
 }
 
 export async function logout() {
-    const result = await post(settings.host + '/logout', {});
+    const result = post(settings.host + '/logout', {});
 
-    sessionStorage.removeItem('username');
-    sessionStorage.removeItem('authToken');
-    sessionStorage.removeItem('userId');
+    clearUserData();
 
     return result;
 }
