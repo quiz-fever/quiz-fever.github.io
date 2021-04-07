@@ -1,4 +1,4 @@
-import { setUserData, clearUserData } from '../util.js';
+import { setUserData, clearUserData, getUserData } from '../util.js';
 
 
 export const settings = {
@@ -37,9 +37,9 @@ function getOptions(method = 'get', body) {
         }
     };
 
-    const token = sessionStorage.getItem('authToken');
-    if (token != null) {
-        options.headers['X-Parse-Session-Token'] = token;
+    const user = getUserData();
+    if (user) {
+        options.headers['X-Parse-Session-Token'] = user.sessionToken;
     }
 
     if (body) {
